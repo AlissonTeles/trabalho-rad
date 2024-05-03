@@ -1,13 +1,5 @@
-from flask import Flask
-from flask_restful import Api 
-from flask_sqlalchemy import SQLAlchemy
-
-# Variaveis
-app = Flask(__name__)
-api = Api(app)
-db = SQLAlchemy(app)
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///space.db"
-
-# Rotas
-api.add_resource("/")
+from app import app, db
+if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+    app.run(host='localhost', debug=True, port=5000)
