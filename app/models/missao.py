@@ -24,3 +24,10 @@ class Missao(db.Model):
         self.tempo_duracao = tempo_duracao
         self.custo_missao = custo_missao
         self.status_missao = status_missao
+
+    def missao_update(self, id, nome, data_lancamento, destino, estado_missao, tripulacao, carga_util, tempo_duracao, custo_missao, status_missao):
+        try:
+            db.session.query(Missao).filter(Missao.id==id).update({"nome":nome, "data_lancamento":data_lancamento, "destino":destino, "estado_missao":estado_missao, "tripulacao":tripulacao, "carga_util":carga_util, "tempo_duracao":tempo_duracao, "custo_missao":custo_missao, "status_missao":status_missao})
+            db.session.commit()
+        except Exception as e:
+            print(e)
