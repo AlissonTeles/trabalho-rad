@@ -31,3 +31,14 @@ class Missao(db.Model):
             db.session.commit()
         except Exception as e:
             print(e)
+    def delete_missao(self, id):
+        try:
+            missao = db.session.query(Missao).get(id)
+            if missao: 
+                db.session.delete(missao)
+                db.session.commit()
+            else:
+                print(f"Missão com id {id} não encontrada.")
+        except Exception as e:
+            print(e)
+            db.session.rollback()        

@@ -14,9 +14,10 @@ with app.app_context():
     db.create_all()
     
 # Rotas
-from app.view.reso_missao import IndexAll, Update
+from app.view.reso_missao import IndexAll, Update, Delete
 api.add_resource(IndexAll, "/getAllMissions")
 api.add_resource(Update, "/atualizar")
+api.add_resource(Delete, "/delete")
 
 @app.route('/')
 def index():
