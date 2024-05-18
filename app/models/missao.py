@@ -1,19 +1,21 @@
 from app import db
+from datetime import datetime
 
 class Missao(db.Model):
     __tablename__ = "missao"
     __table_args__ = {'sqlite_autoincrement': True} 
+    
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String)
-    data_lancamento = db.Column(db.DateTime)
+    data_lancamento = db.Column(db.Date) 
     destino = db.Column(db.String)
     estado_missao = db.Column(db.String)
     tripulacao = db.Column(db.String)
     carga_util = db.Column(db.String)
-    tempo_duracao = db.Column(db.Interval)
+    tempo_duracao = db.Column(db.String)
     custo_missao = db.Column(db.Float)
     status_missao = db.Column(db.String)
-    
+
     def __init__(self, nome, data_lancamento, destino, estado_missao, tripulacao, carga_util, tempo_duracao, custo_missao, status_missao):
         self.nome = nome
         self.data_lancamento = data_lancamento
@@ -24,6 +26,17 @@ class Missao(db.Model):
         self.tempo_duracao = tempo_duracao
         self.custo_missao = custo_missao
         self.status_missao = status_missao
+
+
+    def Adicionar_Missao(self, nome, data_lancamento, destino, estado_missao, tripulacao, carga_util, tempo_duracao, custo_missao, status_missao):
+        try:
+            data_obj = datetime.strptime(data_lancamento, "%Y-%m-%d").date()
+            add_banco = Missao(nome, data_obj, destino, estado_missao, tripulacao, carga_util, tempo_duracao, custo_missao, status_missao)
+            #db.session.add(add_banco) 
+            #db.session.commit()
+        except Exception as error:
+            print(error)
+
 
     def missao_update(self, id, nome, data_lancamento, destino, estado_missao, tripulacao, carga_util, tempo_duracao, custo_missao, status_missao):
         try:
@@ -42,3 +55,4 @@ class Missao(db.Model):
         except Exception as e:
             print(e)
             db.session.rollback()        
+
