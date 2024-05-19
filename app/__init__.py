@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask_restful import Api 
 from flask_sqlalchemy import SQLAlchemy
 from flask import jsonify
@@ -15,15 +15,18 @@ with app.app_context():
     db.create_all()
     
 
-from app.view.reso_missao import IndexAll, Update, Delete, CriarMissao
-api.add_resource(IndexAll, "/getAllMissions")
+# Rotas
+from app.view.reso_missao import ListarMissao, Update, Delete, CriarMissao
+api.add_resource(ListarMissao, "/listar")
+api.add_resource(CriarMissao,'/criar')
 api.add_resource(Update, "/atualizar")
 api.add_resource(Delete, "/delete")
-api.add_resource(CriarMissao,'/criar')
-@app.route('/')
 
+@app.route('/')
 def index():
-    index_all = IndexAll()
-    return render_template('index.html', missao=index_all)
+    # response, status_code = ListarMissao().get()
+    # if status_code == 500:
+    #     return render_template('index.html', error=response["msg"])
+    return render_template('index.html')
 
 
