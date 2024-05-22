@@ -193,9 +193,6 @@
         </div>
         <div class="container-xl table-responsive mt-4">
             <div class="card w-auto mx-4">
-                {% if error %}
-                    <p>Erro: {{ error }}</p>
-                {% else %}
                 <div class="card-body overflow-scroll p-0" style="border-radius: 5px; min-height: min(max(440px, calc(27.5rem + ((1vw - 0px) * 0))), 440px)">
                     <table class="table table-hover">
                         <thead class="mission-thead-table">
@@ -214,35 +211,11 @@
                                 <th scope="col">Excluir</th>
                             </tr>
                         </thead>
-                        <tbody class="mission-tbody-table">
-                             {% for m in missao %}
-                            <tr>
-                                <td>{{ m.id }}</td>
-                                <td>{{ m.nome }}</td>
-                                <td>{{ m.data_lancamento }}</td>
-                                <td>{{ m.destino }}</td>
-                                <td>{{ m.estado_missao }}</td>
-                                <td>{{ m.tripulacao }}</td>
-                                <td>{{ m.carga_util }}</td>
-                                <td>{{ m.tempo_duracao }}</td>
-                                <td>{{ m.custo_missao }}</td>
-                                <td>{{ m.status_missao }}</td>
-                                <td>
-                                    <button type="button" class="btn btn-outline-warning"  onclick="openEditModal()">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deletarModal">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            {% endfor %}
+                        <tbody class="mission-tbody-table" id="mission_table_body">
+                            
                         </tbody>
                     </table>
                 </div>
-                {% endif %}
             </div>
         </div>
     </div>
@@ -280,13 +253,35 @@
         .then(res => res.json())
         .then(data => {
             console.log(JSON.stringify(data.data))
-            const missionTableBody = document.getElementById('mission-table-body');
+            const missionTableBody = document.getElementById('mission_table_body');
             missionTableBody.innerHTML = ''; // Limpa os dados anteriores da tabela
 
-            data.missao.forEach(m => {
+            data.data.forEach(m => {
                 const row = document.createElement('tr');
-                row.innerHTML = ``
+                row.innerHTML = `<td>${ m.id }</td>
+                <td>${ m.nome }</td>
+                <td>${ m.data_lancamento }</td>
+                <td>${ m.destino }</td>
+                <td>${ m.estado_missao }</td>
+                <td>${ m.tripulacao }</td>
+                <td>${ m.carga_util }</td>
+                <td>${ m.tempo_duracao }</td>
+                <td>${ m.custo_missao }</td>
+                <td>${ m.status_missao }</td>
+                <td>
+                    <button type="button" class="btn btn-outline-warning"  onclick="openEditModal(${ m.id })">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deletarModal">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>`
+
+                missionTableBody.appendChild(row)
             })
+
         })
         .catch((err) => {
             console.log(err)
@@ -321,6 +316,8 @@
             }).catch((err) => {
                 console.log(err)
             })
+
+            $("#criarModal").modal("hidden")
 
 
         })

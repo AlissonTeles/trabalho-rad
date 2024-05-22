@@ -2,9 +2,11 @@ from flask import Flask, render_template, jsonify
 from flask_restful import Api 
 from flask_sqlalchemy import SQLAlchemy
 from flask import jsonify
+from flask_cors import CORS # autorizar o acesso
 
 # Variaveis
 app = Flask(__name__)
+CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///space.db"
 
 api = Api(app)
