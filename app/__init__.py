@@ -1,7 +1,6 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 from flask_restful import Api 
 from flask_sqlalchemy import SQLAlchemy
-from flask import jsonify
 from flask_cors import CORS # autorizar o acesso
 
 # Variaveis
@@ -26,9 +25,6 @@ api.add_resource(Delete, "/delete")
 
 @app.route('/')
 def index():
-    # response, status_code = ListarMissao().get()
-    # if status_code == 500:
-    #     return render_template('index.html', error=response["msg"])
     return render_template('index.html')
 
 

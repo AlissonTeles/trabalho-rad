@@ -1,3 +1,0 @@
-Oque pode ser implementado.
-
-criar um except de IntegrityError, quando um elemento já estivesse cadastrado.

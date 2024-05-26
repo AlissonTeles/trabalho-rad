@@ -1,347 +1,848 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Missão</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
-<body>
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
     <!-- Criar Modal -->
-     <div class="modal fade" id="criarModal" tabindex="-1" aria-labelledby="criarModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div
+      class="modal fade"
+      id="criarModal"
+      tabindex="-1"
+      aria-labelledby="criarModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
+          <div class="modal-header">
             <h1 class="modal-title fs-5" id="criarModalLabel">Criar Missão</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="post" id="criar_modal_form" class="container needs-validation" novalidate>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="name_criar_modal" class="form-label">Nome</label>
-                            <input id="name_criar_modal" name="nome" placeholder="Apolo 11" type="text" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="data_lancamento_criar_modal" class="form-label">Data de Lançamento</label>
-                            <input id="data_lancamento_criar_modal" name="data_lancamento" placeholder="16/07/1969" type="date" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="destino_criar_modal" class="form-label">Destino</label>
-                            <input id="destino_criar_modal" name="destino" placeholder="Lua" type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="estado_missao_criar_modal" class="form-label">Estado Missão</label>
-                            <input id="estado_missao_criar_modal" name="estado_missao" placeholder="Concluída" type="text" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="tripulacao_criar_modal" class="form-label">Tripulação</label>
-                            <input id="tripulacao_criar_modal" name="tripulacao" placeholder="Neil Armstrong e Buzz Aldrin" type="text" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="carga_util_criar_modal" class="form-label">Carga Util</label>
-                            <input id="carga_util_criar_modal" name="carga_util" placeholder="Roupas espaciais" type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="tempo_duracao_criar_modal" class="form-label">Tempo Duração</label>
-                            <input id="tempo_duracao_criar_modal" name="tempo_duracao" placeholder="18/07/1969" type="date" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="custo_missao_criar_modal" class="form-label">Custo Missão</label>
-                            <input id="custo_missao_criar_modal" name="custo_missao" placeholder="R$ 100000000" type="number" class="form-control" required>
-                        </div>
-                        <div class="col">
-                            <label for="status_missao_criar_modal" class="form-label">Status Missão</label>
-                            <input id="status_missao_criar_modal" name="status_missao" placeholder="Foi concluido" type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <button style="min-width: 10%;" type="submit" class="btn btn-primary">Criar</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              action=""
+              method="post"
+              id="criar_modal_form"
+              class="container needs-validation"
+              novalidate
+            >
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="name_criar_modal" class="form-label">Nome</label>
+                  <input
+                    id="name_criar_modal"
+                    name="nome"
+                    placeholder="Apolo 11"
+                    type="text"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="data_lancamento_criar_modal" class="form-label"
+                    >Data de Lançamento</label
+                  >
+                  <input
+                    id="data_lancamento_criar_modal"
+                    name="data_lancamento"
+                    placeholder="16/07/1969"
+                    type="date"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="destino_criar_modal" class="form-label"
+                    >Destino</label
+                  >
+                  <input
+                    id="destino_criar_modal"
+                    name="destino"
+                    placeholder="Lua"
+                    type="text"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="estado_missao_criar_modal" class="form-label"
+                    >Estado Missão</label
+                  >
+                  <input
+                    id="estado_missao_criar_modal"
+                    name="estado_missao"
+                    placeholder="Concluída"
+                    type="text"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="tripulacao_criar_modal" class="form-label"
+                    >Tripulação</label
+                  >
+                  <input
+                    id="tripulacao_criar_modal"
+                    name="tripulacao"
+                    placeholder="Neil Armstrong e Buzz Aldrin"
+                    type="text"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="carga_util_criar_modal" class="form-label"
+                    >Carga Util</label
+                  >
+                  <input
+                    id="carga_util_criar_modal"
+                    name="carga_util"
+                    placeholder="Roupas espaciais"
+                    type="text"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="tempo_duracao_criar_modal" class="form-label"
+                    >Tempo Duração</label
+                  >
+                  <input
+                    id="tempo_duracao_criar_modal"
+                    name="tempo_duracao"
+                    placeholder="18/07/1969"
+                    type="date"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="custo_missao_criar_modal" class="form-label"
+                    >Custo Missão</label
+                  >
+                  <input
+                    id="custo_missao_criar_modal"
+                    name="custo_missao"
+                    placeholder="R$ 100000000"
+                    type="number"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="status_missao_criar_modal" class="form-label"
+                    >Status Missão</label
+                  >
+                  <input
+                    id="status_missao_criar_modal"
+                    name="status_missao"
+                    placeholder="Foi concluido"
+                    type="text"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <button
+                style="min-width: 10%"
+                type="submit"
+                class="btn btn-primary"
+              >
+                Criar
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
     <!-- Editar Modal -->
-    <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div
+      class="modal fade"
+      id="editarModal"
+      tabindex="-1"
+      aria-labelledby="editarModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="editarModalLabel">Editar Missão</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="" method="put" id="edit_modal_form" class="container needs-validation" novalidate>
-                    <div class="row mb-3">
-                        <div class="col-2">
-                            <label for="id_edit_modal" class="form-label">Id</label>
-                            <input id="id_edit_modal" type="text" class="form-control" disabled>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="name_edit_modal" class="form-label">Nome</label>
-                            <input id="name_edit_modal" placeholder="Apolo 11" type="text" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="data_lancamento_edit_modal" class="form-label">Data de Lançamento</label>
-                            <input id="data_lancamento_edit_modal" placeholder="16/07/1969" type="date" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="destino_edit_modal" class="form-label">Destino</label>
-                            <input id="destino_edit_modal" placeholder="Lua" type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="estado_missao_edit_modal" class="form-label">Estado Missão</label>
-                            <input id="estado_missao_edit_modal" placeholder="Concluída" type="text" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="tripulacao_edit_modal" class="form-label">Tripulação</label>
-                            <input id="tripulacao_edit_modal" placeholder="Neil Armstrong e Buzz Aldrin" type="text" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="carga_util_edit_modal" class="form-label">Carga Util</label>
-                            <input id="carga_util_edit_modal" placeholder="Roupas espaciais" type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="tempo_duracao_edit_modal" class="form-label">Tempo Duração</label>
-                            <input id="tempo_duracao_edit_modal" placeholder="18/07/1969" type="date" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="custo_missao_edit_modal" class="form-label">Custo Missão</label>
-                            <input id="custo_missao_edit_modal" placeholder="R$ 100000000	" type="number" class="form-control">
-                        </div>
-                        <div class="col">
-                            <label for="status_missao_edit_modal" class="form-label">Status Missão</label>
-                            <input id="status_missao_edit_modal" placeholder="Foi concluido" type="text" class="form-control">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" onclick="atualizarMissao()" class="btn btn-primary">Atualizar</button>
-            </div>
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editarModalLabel">
+              Editar Missão
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              action=""
+              method="put"
+              id="edit_modal_form"
+              class="container needs-validation"
+              novalidate
+            >
+              <div class="row mb-3">
+                <div class="col-2">
+                  <label for="id_edit_modal" class="form-label">Id</label>
+                  <input
+                    id="id_edit_modal"
+                    type="text"
+                    class="form-control"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="name_edit_modal" class="form-label">Nome</label>
+                  <input
+                    id="name_edit_modal"
+                    placeholder="Apolo 11"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <label for="data_lancamento_edit_modal" class="form-label"
+                    >Data de Lançamento</label
+                  >
+                  <input
+                    id="data_lancamento_edit_modal"
+                    placeholder="16/07/1969"
+                    type="date"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <label for="destino_edit_modal" class="form-label"
+                    >Destino</label
+                  >
+                  <input
+                    id="destino_edit_modal"
+                    placeholder="Lua"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="estado_missao_edit_modal" class="form-label"
+                    >Estado Missão</label
+                  >
+                  <input
+                    id="estado_missao_edit_modal"
+                    placeholder="Concluída"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <label for="tripulacao_edit_modal" class="form-label"
+                    >Tripulação</label
+                  >
+                  <input
+                    id="tripulacao_edit_modal"
+                    placeholder="Neil Armstrong e Buzz Aldrin"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <label for="carga_util_edit_modal" class="form-label"
+                    >Carga Util</label
+                  >
+                  <input
+                    id="carga_util_edit_modal"
+                    placeholder="Roupas espaciais"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="tempo_duracao_edit_modal" class="form-label"
+                    >Tempo Duração</label
+                  >
+                  <input
+                    id="tempo_duracao_edit_modal"
+                    placeholder="18/07/1969"
+                    type="date"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <label for="custo_missao_edit_modal" class="form-label"
+                    >Custo Missão</label
+                  >
+                  <input
+                    id="custo_missao_edit_modal"
+                    placeholder="R$ 100000000	"
+                    type="number"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col">
+                  <label for="status_missao_edit_modal" class="form-label"
+                    >Status Missão</label
+                  >
+                  <input
+                    id="status_missao_edit_modal"
+                    placeholder="Foi concluido"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button
+              type="button"
+              onclick="atualizarMissao()"
+              class="btn btn-primary"
+            >
+              Atualizar
+            </button>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
     <!-- Excluir Modal -->
-    <div class="modal fade" id="deletarModal" tabindex="-1" aria-labelledby="deletarModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <div
+      class="modal fade"
+      id="deletarModal"
+      tabindex="-1"
+      aria-labelledby="deletarModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="deletarModalLabel">Deletar Missão</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tem certeza que quer deletar essa missão ?</h1>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" onclick="deletarMissao()" class="btn btn-primary">Deletar</button>
-            </div>
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deletarModalLabel">
+              Deletar Missão
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Tem certeza que quer deletar essa missão ?
+            </h1>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button
+              type="button"
+              onclick="deletarMissao()"
+              class="btn btn-primary"
+            >
+              Deletar
+            </button>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
     <div class="container">
-        <div class="container-xl d-flex justify-content-start align-items-start mt-4">
-            <div class="row gx-4 d-flex justify-content-center align-items-center w-100 mx-3">
-                <div class="col">
-                    <h1>Missões</h1>
-                </div>
-                <div class="col d-flex justify-content-end">
-                    <button data-bs-toggle="modal" style="min-width: 25%;" data-bs-target="#criarModal" class="btn btn-success" id="create_button" type="button">Criar</button>
-                </div>
-            </div>
+      <div
+        class="container-xl d-flex justify-content-start align-items-start mt-4"
+      >
+        <div
+          class="row gx-4 d-flex justify-content-center align-items-center w-100 mx-3"
+        >
+          <div class="col">
+            <h1>Missões</h1>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button
+              data-bs-toggle="modal"
+              style="min-width: 25%"
+              data-bs-target="#criarModal"
+              class="btn btn-success"
+              id="create_button"
+              type="button"
+            >
+              Criar
+            </button>
+          </div>
         </div>
-        <div class="container-xl d-flex justify-content-center align-items-center mt-4" id="main_container">
-            <div class="card w-100 mx-4" id="main_card">
-                <div class="card-body mb-2" id="main_card_body">
-                    <div class="row gx-4 d-flex" id="main_container_row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 row-gap-2 d-flex flex-column align-items-center mt-3">
-                            <label for="name_filter">Nome da Missão</label>
-                            <input class="form-control" type="text" name="name" id="name_filter">
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 row-gap-2 d-flex flex-column align-items-center mt-3">
-                            <label for="initial_date_filter">Filtro de Data Inicial</label>
-                            <input class="form-control" type="text" name="initial_date_filter" id="initial_date_filter">
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 row-gap-2 d-flex flex-column align-items-center mt-3">
-                            <label for="final_date_filter">Filtro de Data Final</label>
-                            <input class="form-control" type="text" name="final_date_filter" id="final_date_filter">
-                        </div>
-                        <div class="d-flex column-gap-4 col-lg-3 col-md-6 col-sm-6 mt-3 align-items-end">
-                            <div class="d-flex w-100"><button id="filter_button" class="btn btn-primary w-100" type="button">Filtrar</button></div>
-                            <div class="d-flex w-100"> <button id="clear_button" class="btn btn-secondary w-100" type="button">Limpar</button></div>
-                        </div>
-                    </div>
+      </div>
+      <div
+        class="container-xl d-flex justify-content-center align-items-center mt-4"
+        id="main_container"
+      >
+        <div class="card w-100 mx-4" id="main_card">
+          <div class="card-body mb-2" id="main_card_body">
+            <div class="row gx-4 d-flex" id="main_container_row">
+              <div
+                class="col-lg-3 col-md-4 col-sm-6 row-gap-2 d-flex flex-column align-items-center mt-3"
+              >
+                <label for="id_filter">ID</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="id"
+                  id="id_filter"
+                />
+              </div>
+              <div
+                class="col-lg-3 col-md-4 col-sm-6 row-gap-2 d-flex flex-column align-items-center mt-3"
+              >
+                <label for="name_filter">Nome da Missão</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="name"
+                  id="name_filter"
+                />
+              </div>
+              <div
+                class="col-lg-3 col-md-4 col-sm-6 row-gap-2 d-flex flex-column align-items-center mt-3"
+              >
+                <label for="initial_date_filter">Filtro de Data Inicial</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="initial_date_filter"
+                  id="initial_date_filter"
+                />
+              </div>
+              <div
+                class="col-lg-3 col-md-4 col-sm-6 row-gap-2 d-flex flex-column align-items-center mt-3"
+              >
+                <label for="final_date_filter">Filtro de Data Final</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="final_date_filter"
+                  id="final_date_filter"
+                />
+              </div>
+              <div
+                class="d-flex column-gap-4 col-lg-3 col-md-6 col-sm-6 mt-3 align-items-end"
+              >
+                <div class="d-flex w-100">
+                  <button
+                    id="filter_button"
+                    class="btn btn-primary w-100"
+                    type="button"
+                  >
+                    Filtrar
+                  </button>
                 </div>
-            </div>
-        </div>
-        <div class="container-xl table-responsive mt-4">
-            <div class="card w-auto mx-4">
-                <div class="card-body overflow-scroll p-0" style="border-radius: 5px; min-height: min(max(440px, calc(27.5rem + ((1vw - 0px) * 0))), 440px)">
-                    <table class="table table-hover">
-                        <thead class="mission-thead-table">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Data Lançamento</th>
-                                <th scope="col">Destino</th>
-                                <th scope="col">Estado Missão</th>
-                                <th scope="col">Tripulação</th>
-                                <th scope="col">Carga Util</th>
-                                <th scope="col">Tempo Duração</th>
-                                <th scope="col">Custo Missão</th>
-                                <th scope="col">Status Missão</th>
-                                <th scope="col">Editar</th>
-                                <th scope="col">Excluir</th>
-                            </tr>
-                        </thead>
-                        <tbody class="mission-tbody-table" id="mission_table_body">
-                            
-                        </tbody>
-                    </table>
+                <div class="d-flex w-100">
+                  <button
+                    id="clear_button"
+                    class="btn btn-secondary w-100"
+                    type="button"
+                  >
+                    Limpar
+                  </button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="container-xl table-responsive mt-4">
+        <div class="card w-auto mx-4">
+          <div
+            class="card-body overflow-scroll p-0"
+            style="
+              border-radius: 5px;
+              min-height: min(
+                max(440px, calc(27.5rem + ((1vw - 0px) * 0))),
+                440px
+              );
+            "
+          >
+            <table class="table table-hover">
+              <thead class="mission-thead-table">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Data Lançamento</th>
+                  <th scope="col">Destino</th>
+                  <th scope="col">Estado Missão</th>
+                  <th scope="col">Tripulação</th>
+                  <th scope="col">Carga Util</th>
+                  <th scope="col">Tempo Duração</th>
+                  <th scope="col">Custo Missão</th>
+                  <th scope="col">Status Missão</th>
+                  <th scope="col">Editar</th>
+                  <th scope="col">Excluir</th>
+                </tr>
+              </thead>
+              <tbody
+                class="mission-tbody-table"
+                id="mission_table_body"
+              ></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
 <style>
-    .mission-thead-table > tr > th {
-        white-space: nowrap;
-        padding-inline: 1rem;
-        text-align: center;
-        background-color: #c8c8c8;
-       
-    }
-    .mission-tbody-table > tr > td {
-        text-align: center;
-        vertical-align: middle;
-    }
-    .mission-tbody-table > tr > td:nth-of-type(6) {
-        white-space: nowrap;
-    }
+  .mission-thead-table > tr > th {
+    white-space: nowrap;
+    padding-inline: 1rem;
+    text-align: center;
+    background-color: #c8c8c8;
+  }
+  .mission-tbody-table > tr > td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .mission-tbody-table > tr > td:nth-of-type(6) {
+    white-space: nowrap;
+  }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"
+></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script>
-    const url = "http://localhost:5000"
-    $(document).ready(function(){
-        fetch(url + "/listar", {
-            method: "GET", 
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(JSON.stringify(data.data))
-            const missionTableBody = document.getElementById('mission_table_body');
-            missionTableBody.innerHTML = ''; // Limpa os dados anteriores da tabela
+  let url = "http://localhost:5000";
+  $(document).ready(async function () {
+    await getListMission();
 
-            data.data.forEach(m => {
-                const row = document.createElement('tr');
-                row.innerHTML = `<td>${ m.id }</td>
-                <td>${ m.nome }</td>
-                <td>${ m.data_lancamento }</td>
-                <td>${ m.destino }</td>
-                <td>${ m.estado_missao }</td>
-                <td>${ m.tripulacao }</td>
-                <td>${ m.carga_util }</td>
-                <td>${ m.tempo_duracao }</td>
-                <td>${ m.custo_missao }</td>
-                <td>${ m.status_missao }</td>
-                <td>
-                    <button type="button" class="btn btn-outline-warning"  onclick="openEditModal(${ m.id })">
-                        <i class="bi bi-pencil-square"></i>
-                    </button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deletarModal">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </td>`
+    // Inicialize o datepicker
+    $("#initial_date_filter").datepicker({
+      format: "dd/mm/yyyy",
+      autoclose: true,
+      todayHighlight: true,
+    });
+    $("#final_date_filter").datepicker({
+      format: "dd/mm/yyyy",
+      autoclose: true,
+      todayHighlight: true,
+    });
 
-                missionTableBody.appendChild(row)
-            })
+    $("#filter_button").on("click", async function () {
+      await getListMission();
+    });
+    $("#clear_button").on("click", async function () {
+      $("#id_filter").val("");
+      $("#name_filter").val("");
+      $("#initial_date_filter").val("");
+      $("#final_date_filter").val("");
+      await getListMission();
+    });
 
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+    $("#criar_modal_form").on("submit", async function (event) {
+      event.preventDefault();
 
-        // Inicialize o datepicker
-        $('#initial_date_filter').datepicker({
-          format: 'dd/mm/yyyy',
-          autoclose: true,
-          todayHighlight: true
-        });
-        $('#final_date_filter').datepicker({
-          format: 'dd/mm/yyyy',
-          autoclose: true,
-          todayHighlight: true
-        });
-
-        $("#criar_modal_form").on("submit", function(event) {
-            event.preventDefault();
-
-            var formData = $(this).serializeArray();
-            var jsonData = {}
-            formData.forEach((field) => {
-                jsonData[field.name] = field.value;
-            })
-            
-            console.log(JSON.stringify(jsonData))
-            fetch(url + "/criar", {method: "POST", headers: {
-                "Content-Type": "application/json"
-            }, body: JSON.stringify(jsonData)}).then((res) => {
-                console.log(res)
-            }).catch((err) => {
-                console.log(err)
-            })
-
-            $("#criarModal").modal("hidden")
-
-
-        })
-
-
+      var formData = $(this).serializeArray();
+      var jsonData = {};
+      formData.forEach((field) => {
+        if (field.name == "data_lancamento" || field.name == "tempo_duracao") {
+           data = (field.value).split("-")
+           field.value = `${data[2]}/${data[1]}/${data[0]}`
+        }
+        jsonData[field.name] = field.value;
       });
 
-
-    $(document)  
-    
-
-    function openEditModal(missao) {
-        console.log(missao)
-        $("#editarModal").modal("show")
-
-    }
-
-    function deletarMissao() {
-        fetch(url + "/delete", {method: "DELETE"}).then((res) => {
-            data =  JSON.stringify(res.data)
-            console.log(res.data)
-            console.log(data)
-        }).catch((err) => {
-            console.log(err)
+      await fetch(url + "/criar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(jsonData),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+            if (data.error) {
+                if (data.status === 500) {
+                    alert(`Um erro aconteceu`)
+                    return
+                }
+                console.log(data.error);
+                alert(`Um erro aconteceu: ${data.error}`);
+                return
+            }
+          alert("Missão foi criada com sucesso!");
         })
+        .catch((err) => {
+            console.log(err);
+            alert("Um erro aconteceu!");
+          });
+          await getListMission();
+          $("#criarModal").modal("hide");
+      
+          $("#criar_modal_form").find("input[type=text], input[type=date], input[type=number]").val("");
+    });
+
+   
+  });
+
+  $(document);
+
+  async function getListMission() {
+    const id = $("#id_filter").val();
+    const name = $("#name_filter").val();
+    const initialDate = $("#initial_date_filter").val();
+    const finalDate = $("#final_date_filter").val();
+
+    let serverUrl = `${url}/listar?`;
+
+    if (id) {
+      serverUrl += `id=${id}&`;
     }
+    if (name) {
+      serverUrl += `nome=${name}&`;
+    }
+    if (initialDate) {
+      serverUrl += `data_lancamento_inicial=${initialDate}&`;
+    }
+    if (finalDate) {
+      serverUrl += `data_lancamento_final=${finalDate}&`;
+    }
+
+    serverUrl = serverUrl.slice(0, -1);
+
+    await fetch(serverUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const missionTableBody = document.getElementById("mission_table_body");
+        missionTableBody.innerHTML = ""; // Limpa os dados anteriores da tabela
+
+        if (data.error) {
+            if (data.status === 500) {
+                alert(`Um erro aconteceu`)
+                return
+            }
+            console.log(data.error);
+            alert(`Um erro aconteceu: ${data.error}`);
+            return
+        }
+
+        data.data.forEach((m) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `<td>${m.id}</td>
+              <td>${m.nome}</td>
+              <td>${m.data_lancamento}</td>
+              <td>${m.destino}</td>
+              <td>${m.estado_missao}</td>
+              <td>${m.tripulacao}</td>
+              <td>${m.carga_util}</td>
+              <td>${m.tempo_duracao}</td>
+              <td>R$ ${m.custo_missao}</td>
+              <td>${m.status_missao}</td>
+              <td>
+                  <button type="button" class="btn btn-outline-warning"  onclick="openEditModal(${m.id})">
+                      <i class="bi bi-pencil-square"></i>
+                  </button>
+              </td>
+              <td>
+                  <button type="button" class="btn btn-outline-danger" onclick="openDeleteModal(${m.id})">
+                      <i class="bi bi-trash"></i>
+                  </button>
+              </td>`;
+
+          missionTableBody.appendChild(row);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(`Um erro aconteceu: ${err}`);
+    });
+  }
+
+  function openEditModal(missaoId) {
+    fetch(url + `/listar?id=${missaoId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const missao = data.data[0];
+
+        if (data.error) {
+            if (data.status === 500) {
+                alert(`Um erro aconteceu`)
+                return
+            }
+            console.log(data.error);
+            alert(`Um erro aconteceu: ${data.error}`);
+            return
+        }
+
+        $("#id_edit_modal").val(missao.id);
+        $("#name_edit_modal").val(missao.nome);
+        $("#data_lancamento_edit_modal").val(
+          formatDateForInput(missao.data_lancamento)
+        );
+        $("#destino_edit_modal").val(missao.destino);
+        $("#estado_missao_edit_modal").val(missao.estado_missao);
+        $("#tripulacao_edit_modal").val(missao.tripulacao);
+        $("#carga_util_edit_modal").val(missao.carga_util);
+        $("#tempo_duracao_edit_modal").val(
+          addHours(
+            formatDateForInput(missao.data_lancamento),
+            missao.tempo_duracao
+          )
+        );
+        $("#custo_missao_edit_modal").val(missao.custo_missao);
+        $("#status_missao_edit_modal").val(missao.status_missao);
+
+        $("#editarModal").modal("show");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Um erro aconteceu!");
+      });
+  }
+
+  async function atualizarMissao() {
+    let dataLancamento = $("#data_lancamento_edit_modal").val().split("-");
+    let tempoDuracao = $("#tempo_duracao_edit_modal").val().split("-");
+    const missaoAtualizada = {
+      id: $("#id_edit_modal").val(),
+      nome: $("#name_edit_modal").val(),
+      data_lancamento: `${dataLancamento[2]}/${dataLancamento[1]}/${dataLancamento[0]}`,
+      destino: $("#destino_edit_modal").val(),
+      estado_missao: $("#estado_missao_edit_modal").val(),
+      tripulacao: $("#tripulacao_edit_modal").val(),
+      carga_util: $("#carga_util_edit_modal").val(),
+      tempo_duracao: `${tempoDuracao[2]}/${tempoDuracao[1]}/${tempoDuracao[0]}`,
+      custo_missao: $("#custo_missao_edit_modal").val(),
+      status_missao: $("#status_missao_edit_modal").val(),
+    };
+    await fetch(url + `/atualizar`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(missaoAtualizada),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert("Missão foi atualizada com sucesso!");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Um erro aconteceu!");
+      });
+    $("#editarModal").modal("hide");
+    await getListMission();
+  }
+
+  function openDeleteModal(missaoId) {
+    $("#deletarModal").data("missao-id", missaoId);
+    $("#deletarModal").modal("show");
+  }
+
+  async function deletarMissao() {
+    const missaoId = $("#deletarModal").data("missao-id");
+    await fetch(url + `/delete`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: missaoId }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+            if (data.status === 500) {
+                alert(`Um erro aconteceu`)
+                return
+            }
+            console.log(data.error);
+            alert(`Um erro aconteceu: ${data.error}`);
+            return
+        }
+        alert("Missão foi excluida com sucesso");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Um erro aconteceu!");
+      });
+    $("#deletarModal").modal("hide");
+    await getListMission();
+  }
+
+  function formatDateForInput(dateStr) {
+    const [day, month, year] = dateStr.split("/");
+    return `${year}-${month}-${day}`;
+  }
+
+  function addHours(date, hoursStr) {
+    const hours = parseInt(hoursStr.split(" ")[0], 10);
+    const dateCopy = new Date(date + "T00:00:00");
+    dateCopy.setHours(0);
+
+    dateCopy.setTime(dateCopy.getTime() + hours * 3600 * 1000);
+
+    const [day, month, year] = dateCopy.toLocaleDateString().split("/");
+    return `${year}-${month}-${day}`;
+  }
 </script>
