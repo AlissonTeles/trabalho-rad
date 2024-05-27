@@ -90,13 +90,14 @@ class Missao(db.Model):
     def create_mission(self, nome, data_lancamento, destino, estado_missao, tripulacao, carga_util, tempo_duracao, custo_missao, status_missao):
         try:
             new_missao = Missao(nome, data_lancamento, destino, estado_missao, tripulacao, carga_util, tempo_duracao, custo_missao, status_missao)
+            if data_lancamento:
+                new_missao.data_lancamento = datetime.strptime(data_lancamento, "%d/%m/%Y").date()
+            if tempo_duracao:
+                new_missao.tempo_duracao = datetime.strptime(tempo_duracao, "%d/%m/%Y").date()
             
             error = new_missao.checkValuesAreNotNull()
             if error != "":
                 return error
-
-            new_missao.data_lancamento = datetime.strptime(data_lancamento, "%d/%m/%Y").date()
-            new_missao.tempo_duracao = datetime.strptime(tempo_duracao, "%d/%m/%Y").date()
 
             db.session.add(new_missao) 
             db.session.commit()
